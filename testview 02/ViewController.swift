@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     
     @IBOutlet weak var myTableView: UITableView!
-    var animals = ["Cat", "Dog", "Cow", "Pig", "Horse", "Whale", "bird"]
+    var animals = ["Cat", "Dog", "Cow", "Pig", "Horse", "Whale", "Bird"]
     var year = ["3", "5", "10", "2", "6", "3", "2"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,29 @@ class ViewController: UIViewController, UITableViewDataSource {
         return animals.count
     }
     
+    //section 몇번 사용 할것인가?
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    //헤드 네임
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if section == 0 {
+        return "Animal Farm 1"
+        } else {
+            return "Animal Farm 2"
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == 0{
+            return "End of Animal farm 1"
+        } else {
+            return "End of Animal farm 2"
+        }
+    }
+    
     //cell을 생성
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //cell 생성, 재활용 풀 사용
@@ -37,6 +60,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         cell.textLabel?.text = animals[row]
         cell.detailTextLabel?.text = year[row]
+        
+        //image 넣기
+        cell.imageView?.image = UIImage(named: animals[row])
         
         return cell
     }
