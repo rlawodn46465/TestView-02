@@ -20,6 +20,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view, typically from a nib.
         // delegate 객체와 ViewController의 연결
         myTableView.dataSource = self
+        
+        //Navigationbar에 title 추가
+        self.title = "동물농장"
     }
 
 
