@@ -37,17 +37,17 @@ class ViewController: UIViewController, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         if section == 0 {
-        return "Animal Farm 1"
+        return "Section Header 1"
         } else {
-            return "Animal Farm 2"
+            return "Section Header 2"
         }
     }
     
     public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if section == 0{
-            return "End of Animal farm 1"
+            return "Section Footer 1"
         } else {
-            return "End of Animal farm 2"
+            return "Section Footer 2"
         }
     }
     
